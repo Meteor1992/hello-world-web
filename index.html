@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Beautiful Home</title>
     <style>
         body {
             margin: 0;
@@ -12,37 +12,85 @@
             justify-content: center;
             align-items: center;
             font-family: Arial, sans-serif;
-            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            background: linear-gradient(120deg, #e0f4ff 0%, #ffecf4 100%);
+            position: relative;
+            overflow: hidden;
         }
         
-        .container {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        h1 {
+        .hello-world {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
             color: #333;
-            font-size: 3rem;
-            margin: 0;
-            animation: bounce 1s ease infinite;
+            font-size: 1.5rem;
+            animation: fadeIn 2s ease;
         }
         
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
+        .house-container {
+            width: 80%;
+            max-width: 800px;
+            aspect-ratio: 4/3;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Hello World!</h1>
+    <div class="house-container">
+        <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+            <!-- 天空 -->
+            <rect x="0" y="0" width="800" height="400" fill="#87CEEB"/>
+            
+            <!-- 太阳 -->
+            <circle cx="700" cy="100" r="40" fill="#FFD700"/>
+            
+            <!-- 云朵 -->
+            <path d="M 100 80 Q 130 50 160 80 Q 190 60 220 80 Q 200 100 160 100 Q 120 100 100 80" fill="white"/>
+            <path d="M 500 120 Q 530 90 560 120 Q 590 100 620 120 Q 600 140 560 140 Q 520 140 500 120" fill="white"/>
+            
+            <!-- 草地 -->
+            <rect x="0" y="400" width="800" height="200" fill="#90EE90"/>
+            
+            <!-- 房屋主体 -->
+            <rect x="300" y="250" width="200" height="200" fill="#FFE4E1"/>
+            
+            <!-- 屋顶 -->
+            <path d="M 250 250 L 400 150 L 550 250 Z" fill="#8B4513"/>
+            
+            <!-- 门 -->
+            <rect x="370" y="350" width="60" height="100" fill="#8B4513"/>
+            <circle cx="420" cy="400" r="5" fill="#FFD700"/>
+            
+            <!-- 窗户 -->
+            <rect x="320" y="280" width="50" height="50" fill="#87CEEB"/>
+            <rect x="430" y="280" width="50" height="50" fill="#87CEEB"/>
+            <path d="M 320 305 L 370 305" stroke="white" stroke-width="2"/>
+            <path d="M 345 280 L 345 330" stroke="white" stroke-width="2"/>
+            <path d="M 430 305 L 480 305" stroke="white" stroke-width="2"/>
+            <path d="M 455 280 L 455 330" stroke="white" stroke-width="2"/>
+            
+            <!-- 烟囱 -->
+            <rect x="460" y="180" width="20" height="40" fill="#8B4513"/>
+            
+            <!-- 烟 -->
+            <path d="M 470 160 Q 480 150 490 160 Q 500 170 510 160" stroke="#808080" fill="none" stroke-width="3"/>
+            <path d="M 470 140 Q 480 130 490 140 Q 500 150 510 140" stroke="#808080" fill="none" stroke-width="2"/>
+            
+            <!-- 花草 -->
+            <path d="M 150 450 Q 160 420 170 450 Q 180 420 190 450" stroke="#228B22" fill="none" stroke-width="2"/>
+            <path d="M 600 470 Q 610 440 620 470 Q 630 440 640 470" stroke="#228B22" fill="none" stroke-width="2"/>
+            
+            <!-- 小路 -->
+            <path d="M 400 450 L 400 550 Q 380 560 420 570 Q 390 580 400 590" stroke="#8B4513" fill="none" stroke-width="5"/>
+        </svg>
     </div>
+    <div class="hello-world">Hello World!</div>
 </body>
 </html>
